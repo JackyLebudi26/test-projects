@@ -1,20 +1,19 @@
-# test-projects
-Networking
 
-# 1) Create an empty repo on GitHub named jacky-portfolio (private)
+gh auth login
 
-# 2) Unzip and go to the project root
 unzip jacky-portfolio.zip
 cd jacky-portfolio
 
-# 3) Create a private repo called jacky-portfolio and push the current folder
-gh repo create jacky-portfolio --private --source=. --remote=origin --push
+# set the remote to your existing repo
+git init
+git add .
+git commit -m "feat: portfolio scaffold (support • network • cloud)"
+git branch -M main
+git remote add origin https://github.com/JackyLebudi26/test-projectsi.git
+git push -u origin main
 
-# 4) Update badges to point at your repo and commit the change
-OWNER=<your-github-username>
-REPO=jacky-portfolio
-OWNER=$OWNER REPO=$REPO bash shared/scripts/bash/update-badges.sh
-
+# update badges and push
+OWNER=JackyLebudi26 REPO=test-projectsi bash shared/scripts/bash/update-badges.sh
 git add -A
-git commit -m "chore: set CI badges to actual repo"
+git commit -m "chore: set split CI badges to actual repo"
 git push
